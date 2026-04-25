@@ -5,3 +5,13 @@
 2026-04-24 12:47:32,420 - WARNING - Valores nulos encontrados: 0
 2026-04-24 12:47:32,420 - WARNING - Valores negativos encontrados: 0
 2026-04-24 12:47:32,424 - INFO - Archivo CSV generado correctamente
+2026-04-25 16:04:41,585 - INFO - Iniciando consumo de API
+2026-04-25 16:04:42,407 - INFO - API OK - status 200
+2026-04-25 16:04:42,407 - INFO - Registros obtenidos: 168
+2026-04-25 16:04:42,431 - INFO - Registros después de filtro horario: 119
+2026-04-25 16:04:42,434 - WARNING - Valores nulos encontrados: 0
+2026-04-25 16:04:42,434 - WARNING - Valores negativos encontrados: 0
+2026-04-25 16:04:42,440 - INFO - Archivo CSV generado correctamente
+2026-04-25 16:04:42,440 - INFO - Conectando a la base de datos
+2026-04-25 16:04:42,441 - INFO - cargando datos del archivo csv
+2026-04-25 16:04:42,451 - INFO - carganda completada
