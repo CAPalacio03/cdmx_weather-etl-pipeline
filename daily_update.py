@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import logging
 import sqlite3
+import csv
 
 # Configuración del logger
 logging.basicConfig(
@@ -71,3 +72,35 @@ logging.warning(f"Valores negativos encontrados: {negative_count}")
 df.to_csv("datos_clima_cdmx.csv", index=False)
 
 logging.info("Archivo CSV generado correctamente")
+
+# Carga de los datos 
+
+logging.info("Conectando a la base de datos")
+
+conn = sqlite3.connect("base_ENKI.db")
+cursor = conn.cursor()
+
+cursor.execute("""CREATE TABLE IF NOT EXISTS clima_cdmx (
+               fecha TIMESTAP,
+               temperatura_c NUMERIC,
+               precipitacion_mm NUMERIC,
+               PRIMARY KEY (fecha)
+               ) """)
+
+
+logging.info("cargando datos del archivo csv")
+with open("datos_clima_cdmx.csv", newline='', encoding='utf-8') as archivo:
+    reader = csv.reader(archivo)
+    
+    next(reader)
+    
+    for fila in reader:
+        cursor.execute(
+            "INSERT INTO clima_cdmx (fecha, temperatura_c, precipitacion_mm) VALUES (?, ?, ?)", 
+            fila
+        )
+
+conn.commit()
+conn.close()
+
+logging.info("carganda completada")
