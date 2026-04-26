@@ -103,4 +103,4 @@ with open("datos_clima_cdmx.csv", newline='', encoding='utf-8') as archivo:
 conn.commit()
 conn.close()
 
-logging.info("carganda completada")
+logging.info("carga completada")
