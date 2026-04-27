@@ -77,7 +77,7 @@ logging.info("Archivo CSV generado correctamente")
 
 logging.info("Conectando a la base de datos")
 
-conn = sqlite3.connect("base_ENKI.db")
+conn = sqlite3.connect("base.db")
 cursor = conn.cursor()
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS clima_cdmx (
