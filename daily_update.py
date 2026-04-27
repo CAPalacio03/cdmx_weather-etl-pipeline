@@ -81,7 +81,7 @@ conn = sqlite3.connect("base.db")
 cursor = conn.cursor()
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS clima_cdmx (
-               fecha TIMESTAP,
+               fecha TIMESTAMP,
                temperatura_c NUMERIC,
                precipitacion_mm NUMERIC,
                PRIMARY KEY (fecha)
